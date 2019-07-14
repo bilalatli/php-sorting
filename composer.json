@@ -16,5 +16,11 @@
     "autoload": {
         "BALib\\Sorting\\" : "src/"
     },
-    "require": {}
+    "require": {
+    },
+    "config": {
+        "platform": {
+            "php": "^7.*"
+        }
+    }
 }
