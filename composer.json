@@ -1,0 +1,19 @@
+{
+    "name": "bilalatli/php-sorting",
+    "description": "PHP Sorting Algorythms",
+    "type": "project",
+    "require-dev": {
+        "symfony/var-dumper": "^4.3"
+    },
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Bilal ATLI",
+            "email": "ytbilalatli@gmail.com"
+        }
+    ],
+    "autoload": {
+        "BALib\\Sorting\\" : "src/"
+    },
+    "require": {}
+}
