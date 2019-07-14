@@ -3,7 +3,8 @@
     "description": "PHP Sorting Algorythms",
     "type": "project",
     "require-dev": {
-        "symfony/var-dumper": "^4.3"
+        "symfony/var-dumper": "^4.3",
+        "phpunit/phpunit": "^8.2"
     },
     "license": "GNU",
     "authors": [
