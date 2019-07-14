@@ -25,7 +25,15 @@ class BubbleSort extends ASorting implements Sorting
     public static function sort(array &$array): array
     {
         self::timerStart();
-
+        $count = count($array);
+        for ($j = 0; $j < ( $count - 1 ); $j++) {
+            for ($i = 0; $i < ( $count - $j - 1 ); $i++) {
+                if ($array[$i] > $array[$i + 1]) {
+                    list($array[$i], $array[$i + 1]) = [ $array[$i + 1], $array[$i] ];
+                }
+            }
+        }
         self::timerStop();
+        return $array;
     }
 }

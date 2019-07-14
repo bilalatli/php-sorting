@@ -14,7 +14,7 @@ use BALib\Sorting\Interfaces\Sorting;
  *
  * @package BALib\Sorting\Algorithms;
  */
-class ShellSort extends ASorting implements Sorting
+class CountingSort extends ASorting implements Sorting
 {
 
     /**
@@ -27,17 +27,21 @@ class ShellSort extends ASorting implements Sorting
     public static function sort(array &$array): array
     {
         self::timerStart();
+        $max = max($array);
+        $c = [];
         $count = count($array);
-        $divide = floor($count / 2);
-        while ($divide > 0) {
-            for ($i = 0; $i < ( $count - $divide ); $i++) {
-                $j = $i;
-                while ($j >= 0 && $array[$j] > $array[$j + $divide]) {
-                    list($array[$j], $array[$j + $divide]) = [ $array[$j + $divide], $array[$j] ];
-                    $j--;
-                }
+        for ($i = 0; $i <= $max; $i++) {
+            $c[$i] = 0;
+        }
+        for ($i = 0; $i < $count; $i++) {
+            $c[$array[$i]]++;
+        }
+        $b = 0;
+        for ($j = 0; $j <= $max; $j++) {
+            for ($i = 0; $i < $c[$j]; $i++) {
+                $array[$b] = $j;
+                $b++;
             }
-            $divide = floor($divide / 2);
         }
         self::timerStop();
         return $array;
