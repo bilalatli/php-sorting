@@ -9,15 +9,26 @@
  * Original Filename : run.php
  */
 
-
 use BALib\Sorting\ArrayGenerator;
 use BALib\Sorting\Arrays\Sorting;
 
 require_once "vendor/autoload.php";
 
-$dummyArray = ArrayGenerator::createArray(1000);
+if ($argc <= 1) {
+    $itemCount = 5000;
+} else {
+    $count = intval($argv[1]);
+    if ($count <= 0) {
+        throw new InvalidArgumentException("Item count must be greater than zero");
+    }
+    $itemCount = $count;
+}
+
+$dummyArray = ArrayGenerator::createArray($itemCount);
 
 $methods = [ 'shellSort', 'bubbleSort', 'countingSort', 'heapSort', 'insertSort', 'selectionSort', 'combSort', 'quickSort', 'mergeSort', 'gnomeSort', 'cocktailSort', 'oddEvenSort', 'bubbleSortWithFlag', 'combinedBubbleSort', 'stupidSort' ];
+
+$without = [ 'stupidSort' ];
 
 // Note: Stupid Sort is Really Stupid Bigger Item Counts :). Discard It
 
@@ -25,6 +36,9 @@ $arrays = [];
 $results = [];
 
 foreach ($methods as $method) {
+    if (in_array($method, $without)) {
+        continue;
+    }
     $arrays[$method] = $dummyArray;
 }
 
