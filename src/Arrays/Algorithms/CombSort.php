@@ -3,6 +3,9 @@
 namespace BALib\Sorting\Algorithms;
 
 
+use BALib\Abstracts\ASorting;
+use BALib\Sorting\Interfaces\Sorting;
+
 /**
  * @author  : Bilal ATLI
  * @date    : 30.03.2019 15:44
@@ -11,7 +14,38 @@ namespace BALib\Sorting\Algorithms;
  *
  * @package BALib\Sorting\Algorithms;
  */
-class CombSort
+class CombSort extends ASorting implements Sorting
 {
 
+    /**
+     * Sort Array
+     *
+     * @param array &$array
+     *
+     * @return array
+     */
+    public static function sort(array &$array): array
+    {
+        self::timerStart();
+        $gap = $count = count($array);
+        $swapped = true;
+        while ($gap > 1 || $swapped) {
+            if ($gap > 1) {
+                $gap = floor($gap / 1.24733);
+            }
+            $i = 0;
+            $swapped = false;
+            while ($i + $gap < $count) {
+                if ($array[$i] > $array[$i + $gap]) {
+                    list($array[$i], $array[$i + $gap]) = [ $array[$i + $gap], $array[$i] ];
+                    if (!$swapped) {
+                        $swapped = true;
+                    }
+                }
+                $i++;
+            }
+        }
+        self::timerStop();
+        return $array;
+    }
 }
