@@ -1,6 +1,6 @@
 {
     "name": "bilalatli/php-sorting",
-    "description": "PHP Sorting Algorythms",
+    "description": "PHP Sorting Algorithms",
     "type": "project",
     "require-dev": {
         "symfony/var-dumper": "^4.3",

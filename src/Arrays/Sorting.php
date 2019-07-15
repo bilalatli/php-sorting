@@ -1,5 +1,6 @@
 <?php
 
+use BALib\Sorting\Benchmark;
 use BALib\Sorting\Algorithms\BubbleSort;
 use BALib\Sorting\Algorithms\BubbleSortWithFlag;
 use BALib\Sorting\Algorithms\CocktailSort;
@@ -26,6 +27,16 @@ use BALib\Sorting\Algorithms\InsertSort;
 class Sorting
 {
     /**
+     * @var bool
+     */
+    private static $benchmark = false;
+
+    /**
+     * @var Benchmark
+     */
+    private static $lastBenchmark;
+
+    /**
      * Shell Sort Algorithm
      *
      * @param array $array
@@ -34,7 +45,12 @@ class Sorting
      */
     public static function shellSort(array &$array): array
     {
-        return ShellSort::sort($array);
+        ShellSort::setBenchmark(self::$benchmark);
+        $output = ShellSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = ShellSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -46,7 +62,12 @@ class Sorting
      */
     public static function bubbleSort(array &$array): array
     {
-        return BubbleSort::sort($array);
+        BubbleSort::setBenchmark(self::$benchmark);
+        $output = BubbleSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = BubbleSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -58,7 +79,12 @@ class Sorting
      */
     public static function countingSort(array &$array): array
     {
-        return CountingSort::sort($array);
+        CountingSort::setBenchmark(self::$benchmark);
+        $output = CountingSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = CountingSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -70,7 +96,12 @@ class Sorting
      */
     public static function heapSort(array &$array): array
     {
-        return HeapSort::sort($array);
+        HeapSort::setBenchmark(self::$benchmark);
+        $output = HeapSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = HeapSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -82,7 +113,12 @@ class Sorting
      */
     public static function insertSort(array &$array): array
     {
-        return InsertSort::sort($array);
+        InsertSort::setBenchmark(self::$benchmark);
+        $output = InsertSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = InsertSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -94,7 +130,12 @@ class Sorting
      */
     public static function selectionSort(array &$array): array
     {
-        return SelectionSort::sort($array);
+        SelectionSort::setBenchmark(self::$benchmark);
+        $output = SelectionSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = SelectionSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -106,7 +147,12 @@ class Sorting
      */
     public static function combSort(array &$array): array
     {
-        return CombSort::sort($array);
+        CombSort::setBenchmark(self::$benchmark);
+        $output = CombSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = CombSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -120,9 +166,14 @@ class Sorting
      */
     public static function quickSort(array &$array, int $left = 0, int $right = 0): array
     {
+        QuickSort::setBenchmark(self::$benchmark);
         QuickSort::setLeft($left);
         QuickSort::setRight($right);
-        return QuickSort::sort($array);
+        $output = QuickSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = QuickSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -137,9 +188,14 @@ class Sorting
      */
     public static function mergeSort(array &$array, int $first = 0, int $last = null): array
     {
+        MergeSort::setBenchmark(self::$benchmark);
         MergeSort::setFirst($first);
         MergeSort::setLast($last);
-        return MergeSort::sort($array);
+        $output = MergeSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = MergeSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -151,7 +207,12 @@ class Sorting
      */
     public static function gnomeSort(array &$array): array
     {
-        return GnomeSort::sort($array);
+        GnomeSort::setBenchmark(self::$benchmark);
+        $output = GnomeSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = GnomeSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -163,7 +224,12 @@ class Sorting
      */
     public static function cocktailSort(array &$array): array
     {
-        return CocktailSort::sort($array);
+        CocktailSort::setBenchmark(self::$benchmark);
+        $output = CocktailSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = CocktailSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -175,7 +241,12 @@ class Sorting
      */
     public static function oddEvenSort(array &$array): array
     {
-        return OddEvenSort::sort($array);
+        OddEvenSort::setBenchmark(self::$benchmark);
+        $output = OddEvenSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = OddEvenSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -187,7 +258,12 @@ class Sorting
      */
     public static function bubbleSortWithFlag(array &$array): array
     {
-        return BubbleSortWithFlag::sort($array);
+        BubbleSortWithFlag::setBenchmark(self::$benchmark);
+        $output = BubbleSortWithFlag::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = BubbleSortWithFlag::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -199,7 +275,12 @@ class Sorting
      */
     public static function combinedBubbleSort(array &$array): array
     {
-        return CombinedBubbleSort::sort($array);
+        CombinedBubbleSort::setBenchmark(self::$benchmark);
+        $output = CombinedBubbleSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = CombinedBubbleSort::getBenchmark();
+        }
+        return $output;
     }
 
     /**
@@ -211,6 +292,34 @@ class Sorting
      */
     public static function stupidSort(array &$array): array
     {
-        return StupidSort::sort($array);
+        StupidSort::setBenchmark(self::$benchmark);
+        $output = StupidSort::sort($array);
+        if (true === self::$benchmark) {
+            self::$lastBenchmark = StupidSort::getBenchmark();
+        }
+        return $output;
+    }
+
+    /**
+     * Get Benchmark
+     *
+     * @return Benchmark
+     */
+    public static function getBenchmark()
+    {
+        if (false === self::$benchmark && null !== self::$lastBenchmark) {
+            throw new LogicException("Benchmark failed. Please enable benchmarking first");
+        }
+        return self::$lastBenchmark;
+    }
+
+    /**
+     * Set Active or Passive Benchmarking
+     *
+     * @param bool $benchmark
+     */
+    public static function setBenchmark(bool $benchmark)
+    {
+        self::$benchmark = $benchmark;
     }
 }

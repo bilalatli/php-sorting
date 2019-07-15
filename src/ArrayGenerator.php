@@ -1,6 +1,6 @@
 <?php
 
-namespace BALib;
+namespace BALib\Sorting;
 
 
 use InvalidArgumentException;

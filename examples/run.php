@@ -9,5 +9,13 @@
  * Original Filename : run.php
  */
 
+use BALib\Sorting\ArrayGenerator;
+
 require_once "vendor/autoload.php";
 
+$dummyArray = ArrayGenerator::createArray(5000);
+
+Sorting::setBenchmark(true);
+
+Sorting::quickSort($dummyArray);
+dd(Sorting::getBenchmark()->getTimeDifference());
