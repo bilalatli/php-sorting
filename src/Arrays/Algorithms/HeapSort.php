@@ -32,7 +32,7 @@ class HeapSort extends ASorting implements Sorting
         while ($count > 0) {
             list($array[0], $array[$count - 1]) = [ $array[$count - 1], $array[0] ];
             $count--;
-            heapify($array, 0, $count);
+            self::heapify($array, 0, $count);
         }
         self::timerStop();
         return $array;

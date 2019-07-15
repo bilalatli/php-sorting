@@ -1,5 +1,7 @@
 <?php
 
+use BALib\Sorting\Algorithms\BubbleSort;
+use BALib\Sorting\Algorithms\CountingSort;
 use BALib\Sorting\Algorithms\ShellSort;
 
 /**
@@ -32,11 +34,11 @@ class Sorting
      */
     public static function bubbleSort(array &$array): array
     {
-        return \BALib\Sorting\Algorithms\BubbleSort::sort($array);
+        return BubbleSort::sort($array);
     }
 
     /**
-     * XXXX
+     * Counting Sort
      *
      * @param array $array
      *
@@ -44,11 +46,11 @@ class Sorting
      */
     public static function countingSort(array &$array): array
     {
-        return \BALib\Sorting\Algorithms\CountingSort::sort($array);
+        return CountingSort::sort($array);
     }
 
     /**
-     * XXXX
+     * Heap Sort
      *
      * @param array $array
      *
@@ -56,11 +58,11 @@ class Sorting
      */
     public static function heapSort(array &$array): array
     {
-
+        return \BALib\Sorting\Algorithms\HeapSort::sort($array);
     }
 
     /**
-     * XXXX
+     * Insert Sort
      *
      * @param array $array
      *
@@ -72,7 +74,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Selection Sort
      *
      * @param array $array
      *
@@ -84,7 +86,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Comb Sort
      *
      * @param array $array
      *
@@ -96,7 +98,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Quick Sort
      *
      * @param array $array
      *
@@ -108,7 +110,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Merge Sort
      *
      * @param array $array
      *
@@ -120,7 +122,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Gnome Sort
      *
      * @param array $array
      *
@@ -132,7 +134,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Cocktail Sort
      *
      * @param array $array
      *
@@ -144,7 +146,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Odd Even Sort
      *
      * @param array $array
      *
@@ -156,7 +158,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Bubble Sort With Flag
      *
      * @param array $array
      *
@@ -168,7 +170,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Combined Bubble Sort
      *
      * @param array $array
      *
@@ -180,7 +182,7 @@ class Sorting
     }
 
     /**
-     * XXXX
+     * Stupid Sort
      *
      * @param array $array
      *
