@@ -2,7 +2,7 @@
 
 namespace BALib\Sorting\Algorithms;
 
-use BALib\Abstracts\ASorting;
+use BALib\Sorting\Abstracts\ASorting;
 use BALib\Sorting\Interfaces\Sorting;
 
 /**

@@ -1,5 +1,7 @@
 <?php
 
+namespace BALib\Sorting\Arrays;
+
 use BALib\Sorting\Benchmark;
 use BALib\Sorting\Algorithms\BubbleSort;
 use BALib\Sorting\Algorithms\BubbleSortWithFlag;

@@ -1,9 +1,9 @@
 <?php
 
-namespace BALib\Abstracts;
+namespace BALib\Sorting\Abstracts;
 
 
-use BALib\Benchmark;
+use BALib\Sorting\Benchmark;
 use LogicException;
 
 /**
@@ -12,7 +12,7 @@ use LogicException;
  * @mail    : <bilal@garivaldi.com>, <ytbilalatli@gmail.com>
  * @phone   : +90 0-542-433-09-19
  *
- * @package BALib\Abstracts;
+ * @package BALib\Sorting\Abstracts;
  */
 abstract class ASorting
 {

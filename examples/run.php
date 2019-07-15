@@ -9,7 +9,9 @@
  * Original Filename : run.php
  */
 
+
 use BALib\Sorting\ArrayGenerator;
+use BALib\Sorting\Arrays\Sorting;
 
 require_once "vendor/autoload.php";
 
