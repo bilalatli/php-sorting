@@ -1,8 +1,20 @@
 <?php
 
 use BALib\Sorting\Algorithms\BubbleSort;
+use BALib\Sorting\Algorithms\BubbleSortWithFlag;
+use BALib\Sorting\Algorithms\CocktailSort;
+use BALib\Sorting\Algorithms\CombinedBubbleSort;
+use BALib\Sorting\Algorithms\CombSort;
 use BALib\Sorting\Algorithms\CountingSort;
+use BALib\Sorting\Algorithms\GnomeSort;
+use BALib\Sorting\Algorithms\HeapSort;
+use BALib\Sorting\Algorithms\MergeSort;
+use BALib\Sorting\Algorithms\OddEvenSort;
+use BALib\Sorting\Algorithms\QuickSort;
+use BALib\Sorting\Algorithms\SelectionSort;
 use BALib\Sorting\Algorithms\ShellSort;
+use BALib\Sorting\Algorithms\StupidSort;
+use BALib\Sorting\Algorithms\InsertSort;
 
 /**
  * @author  : Bilal ATLI
@@ -58,7 +70,7 @@ class Sorting
      */
     public static function heapSort(array &$array): array
     {
-        return \BALib\Sorting\Algorithms\HeapSort::sort($array);
+        return HeapSort::sort($array);
     }
 
     /**
@@ -70,7 +82,7 @@ class Sorting
      */
     public static function insertSort(array &$array): array
     {
-
+        return InsertSort::sort($array);
     }
 
     /**
@@ -82,7 +94,7 @@ class Sorting
      */
     public static function selectionSort(array &$array): array
     {
-
+        return SelectionSort::sort($array);
     }
 
     /**
@@ -94,31 +106,40 @@ class Sorting
      */
     public static function combSort(array &$array): array
     {
-
+        return CombSort::sort($array);
     }
 
     /**
      * Quick Sort
      *
      * @param array $array
+     * @param int   $left
+     * @param int   $right
      *
      * @return array
      */
-    public static function quickSort(array &$array): array
+    public static function quickSort(array &$array, int $left = 0, int $right = 0): array
     {
-
+        QuickSort::setLeft($left);
+        QuickSort::setRight($right);
+        return QuickSort::sort($array);
     }
 
     /**
      * Merge Sort
      *
-     * @param array $array
+     * @param array    $array
+     *
+     * @param int      $first
+     * @param int|null $last
      *
      * @return array
      */
-    public static function mergeSort(array &$array): array
+    public static function mergeSort(array &$array, int $first = 0, int $last = null): array
     {
-
+        MergeSort::setFirst($first);
+        MergeSort::setLast($last);
+        return MergeSort::sort($array);
     }
 
     /**
@@ -130,7 +151,7 @@ class Sorting
      */
     public static function gnomeSort(array &$array): array
     {
-
+        return GnomeSort::sort($array);
     }
 
     /**
@@ -142,7 +163,7 @@ class Sorting
      */
     public static function cocktailSort(array &$array): array
     {
-
+        return CocktailSort::sort($array);
     }
 
     /**
@@ -154,7 +175,7 @@ class Sorting
      */
     public static function oddEvenSort(array &$array): array
     {
-
+        return OddEvenSort::sort($array);
     }
 
     /**
@@ -166,7 +187,7 @@ class Sorting
      */
     public static function bubbleSortWithFlag(array &$array): array
     {
-
+        return BubbleSortWithFlag::sort($array);
     }
 
     /**
@@ -178,7 +199,7 @@ class Sorting
      */
     public static function combinedBubbleSort(array &$array): array
     {
-
+        return CombinedBubbleSort::sort($array);
     }
 
     /**
@@ -190,6 +211,6 @@ class Sorting
      */
     public static function stupidSort(array &$array): array
     {
-
+        return StupidSort::sort($array);
     }
 }
