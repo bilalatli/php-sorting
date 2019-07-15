@@ -114,9 +114,9 @@ class MergeSort extends ASorting implements Sorting
     /**
      * Set Last
      *
-     * @param int $last
+     * @param int|null $last
      */
-    public static function setLast(int $last)
+    public static function setLast(?int $last)
     {
         self::$last = $last;
     }

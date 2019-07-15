@@ -18,6 +18,7 @@ use BALib\Sorting\Algorithms\SelectionSort;
 use BALib\Sorting\Algorithms\ShellSort;
 use BALib\Sorting\Algorithms\StupidSort;
 use BALib\Sorting\Algorithms\InsertSort;
+use LogicException;
 
 /**
  * @author  : Bilal ATLI
@@ -310,7 +311,7 @@ class Sorting
     public static function getBenchmark()
     {
         if (false === self::$benchmark && null !== self::$lastBenchmark) {
-            throw new LogicException("Benchmark failed. Please enable benchmarking first");
+            throw new LogicException("Benchmark failed. Please enable benchmarking first", 0x7FBB02AC);
         }
         return self::$lastBenchmark;
     }
@@ -323,5 +324,15 @@ class Sorting
     public static function setBenchmark(bool $benchmark)
     {
         self::$benchmark = $benchmark;
+    }
+
+    /**
+     * Get Is Benchmark Active
+     *
+     * @return bool
+     */
+    public static function isBenchmarkActive(): bool
+    {
+        return self::$benchmark === true;
     }
 }

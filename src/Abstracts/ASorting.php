@@ -69,7 +69,7 @@ abstract class ASorting
     public static function getBenchmark()
     {
         if (false === self::$benchmark) {
-            throw new LogicException("Benchmark failed. Please enable benchmarking first");
+            throw new LogicException("Benchmark failed. Please enable benchmarking first", 0x7FBB02AC);
         }
         return new Benchmark(self::$timerStart, self::$timerStop);
     }

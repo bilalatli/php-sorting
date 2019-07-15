@@ -15,9 +15,29 @@ use BALib\Sorting\Arrays\Sorting;
 
 require_once "vendor/autoload.php";
 
-$dummyArray = ArrayGenerator::createArray(5000);
+$dummyArray = ArrayGenerator::createArray(1000);
+
+$methods = [ 'shellSort', 'bubbleSort', 'countingSort', 'heapSort', 'insertSort', 'selectionSort', 'combSort', 'quickSort', 'mergeSort', 'gnomeSort', 'cocktailSort', 'oddEvenSort', 'bubbleSortWithFlag', 'combinedBubbleSort', 'stupidSort' ];
+
+// Note: Stupid Sort is Really Stupid Bigger Item Counts :). Discard It
+
+$arrays = [];
+$results = [];
+
+foreach ($methods as $method) {
+    $arrays[$method] = $dummyArray;
+}
 
 Sorting::setBenchmark(true);
 
-Sorting::quickSort($dummyArray);
-dd(Sorting::getBenchmark()->getTimeDifference());
+foreach ($arrays as $method => $dummy) {
+    echo ">> $method has started." . PHP_EOL;
+    Sorting::$method($dummy);
+    $time = Sorting::getBenchmark()->getTimeDifference();
+    $results[$method] = $time;
+    echo ">> $method completed in $time second." . PHP_EOL;
+}
+
+asort($results);
+
+dd($results);
