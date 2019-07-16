@@ -1,12 +1,29 @@
 {
     "name": "bilalatli/php-sorting",
     "description": "PHP Sorting Algorithms",
-    "type": "project",
+    "type": "composer-plugin",
+    "version": "1.0.0",
+    "time": "2019-07-16 01:00:00",
+    "support": {
+        "email": "ytbilalatli@gmail.com",
+        "source": "https://github.com/bilalatli/php-sorting",
+        "docs" : "https://github.com/bilalatli/php-sorting"
+    },
+    "keywords": [
+        "sorting",
+        "sort",
+        "fast sort",
+        "php sort",
+        "bubble sort",
+        "quick sort",
+        "counting sort",
+        "merge sort"
+    ],
     "require-dev": {
         "symfony/var-dumper": "^4.3",
         "phpunit/phpunit": "^8.2"
     },
-    "license": "GNU",
+    "license": "MIT",
     "authors": [
         {
             "name": "Bilal ATLI",
@@ -15,7 +32,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "BALib\\Sorting\\" : "src/"
+            "BALib\\Sorting\\": "src/"
         }
     },
     "autoload-dev": {
@@ -27,7 +44,7 @@
     },
     "config": {
         "platform": {
-            "php": "^7.*"
+            "php": "^7.0"
         }
     }
 }
